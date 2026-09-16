@@ -1,6 +1,7 @@
 package com.masunov.task1.slot;
 
 import com.masunov.task1.calendar.CalendarEntity;
+import com.masunov.task1.calendar.CalendarMutationLock;
 import com.masunov.task1.calendar.CalendarNotFoundException;
 import com.masunov.task1.calendar.CalendarRepository;
 import com.masunov.task1.meeting.MeetingBackedSlotMutationException;
@@ -19,17 +20,20 @@ import java.util.UUID;
 class SlotService {
 
     private final CalendarRepository calendarRepository;
+    private final CalendarMutationLock calendarMutationLock;
     private final SlotRepository slotRepository;
     private final MeetingRepository meetingRepository;
     private final EntityManager entityManager;
 
     SlotService(
             CalendarRepository calendarRepository,
+            CalendarMutationLock calendarMutationLock,
             SlotRepository slotRepository,
             MeetingRepository meetingRepository,
             EntityManager entityManager
     ) {
         this.calendarRepository = calendarRepository;
+        this.calendarMutationLock = calendarMutationLock;
         this.slotRepository = slotRepository;
         this.meetingRepository = meetingRepository;
         this.entityManager = entityManager;
@@ -37,6 +41,7 @@ class SlotService {
 
     @Transactional
     SlotResponse create(UUID calendarId, SlotRequest request) {
+        calendarMutationLock.acquire(calendarId);
         CalendarEntity calendar = calendarRepository.findById(calendarId)
                 .orElseThrow(() -> new CalendarNotFoundException(calendarId));
         Interval interval = intervalFrom(request);
@@ -56,6 +61,7 @@ class SlotService {
 
     @Transactional
     SlotResponse update(UUID calendarId, UUID slotId, SlotRequest request, long expectedVersion) {
+        calendarMutationLock.acquire(calendarId);
         SlotEntity slot = findSlotForUpdate(calendarId, slotId);
         requireCurrentVersion(slot, expectedVersion);
         rejectMeetingBackedSlotMutation(slotId);
@@ -72,6 +78,7 @@ class SlotService {
 
     @Transactional
     void delete(UUID calendarId, UUID slotId, long expectedVersion) {
+        calendarMutationLock.acquire(calendarId);
         SlotEntity slot = findSlotForUpdate(calendarId, slotId);
         requireCurrentVersion(slot, expectedVersion);
         rejectMeetingBackedSlotMutation(slotId);
@@ -81,6 +88,7 @@ class SlotService {
 
     @Transactional
     SlotResponse changeState(UUID calendarId, UUID slotId, SlotStateRequest request, long expectedVersion) {
+        calendarMutationLock.acquire(calendarId);
         if (request == null || request.state() == null) {
             throw new InvalidUserRequestException("state is required");
         }

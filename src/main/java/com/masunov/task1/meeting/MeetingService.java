@@ -1,5 +1,6 @@
 package com.masunov.task1.meeting;
 
+import com.masunov.task1.calendar.CalendarMutationLock;
 import com.masunov.task1.slot.SlotEntity;
 import com.masunov.task1.slot.SlotNotFoundException;
 import com.masunov.task1.slot.SlotRepository;
@@ -16,16 +17,23 @@ import java.util.UUID;
 @Service
 class MeetingService {
 
+    private final CalendarMutationLock calendarMutationLock;
     private final SlotRepository slotRepository;
     private final MeetingRepository meetingRepository;
 
-    MeetingService(SlotRepository slotRepository, MeetingRepository meetingRepository) {
+    MeetingService(
+            CalendarMutationLock calendarMutationLock,
+            SlotRepository slotRepository,
+            MeetingRepository meetingRepository
+    ) {
+        this.calendarMutationLock = calendarMutationLock;
         this.slotRepository = slotRepository;
         this.meetingRepository = meetingRepository;
     }
 
     @Transactional
     MeetingResponse convert(UUID calendarId, UUID slotId, MeetingRequest request, long expectedVersion) {
+        calendarMutationLock.acquire(calendarId);
         ValidatedMeetingRequest validatedRequest = validate(request);
         SlotEntity slot = slotRepository.findByIdAndCalendarIdForUpdate(slotId, calendarId)
                 .orElseThrow(() -> new SlotNotFoundException(slotId));
