@@ -1,0 +1,16 @@
+time,dockerstats,pg_active_backends
+02:08:35,task1-app-1,538.95%,618.5MiB / 7.653GiB,7.89%;task1-postgres-1,244.25%,83.71MiB / 7.653GiB,1.07%;,11
+02:08:39,task1-app-1,223.03%,618.8MiB / 7.653GiB,7.90%;task1-postgres-1,195.91%,85.07MiB / 7.653GiB,1.09%;,11
+02:08:44,task1-app-1,267.63%,619MiB / 7.653GiB,7.90%;task1-postgres-1,272.38%,87.25MiB / 7.653GiB,1.11%;,11
+02:08:48,task1-app-1,278.55%,618.9MiB / 7.653GiB,7.90%;task1-postgres-1,295.62%,89.53MiB / 7.653GiB,1.14%;,11
+02:08:53,task1-app-1,289.86%,618.3MiB / 7.653GiB,7.89%;task1-postgres-1,309.76%,91.39MiB / 7.653GiB,1.17%;,11
+02:08:58,task1-app-1,320.33%,618.6MiB / 7.653GiB,7.89%;task1-postgres-1,280.84%,92.91MiB / 7.653GiB,1.19%;,11
+02:09:02,task1-app-1,267.38%,618.6MiB / 7.653GiB,7.89%;task1-postgres-1,266.14%,94.41MiB / 7.653GiB,1.20%;,11
+02:09:07,task1-app-1,299.07%,618.7MiB / 7.653GiB,7.89%;task1-postgres-1,319.82%,96.45MiB / 7.653GiB,1.23%;,11
+02:09:12,task1-app-1,271.09%,618.7MiB / 7.653GiB,7.90%;task1-postgres-1,319.18%,97.9MiB / 7.653GiB,1.25%;,11
+02:09:16,task1-app-1,265.15%,618.7MiB / 7.653GiB,7.90%;task1-postgres-1,322.03%,99.55MiB / 7.653GiB,1.27%;,11
+02:09:20,task1-app-1,268.57%,618.7MiB / 7.653GiB,7.89%;task1-postgres-1,341.93%,101MiB / 7.653GiB,1.29%;,11
+02:09:24,task1-app-1,248.23%,619.3MiB / 7.653GiB,7.90%;task1-postgres-1,355.99%,104.7MiB / 7.653GiB,1.34%;,11
+02:09:28,task1-app-1,277.85%,618.8MiB / 7.653GiB,7.90%;task1-postgres-1,347.81%,104.5MiB / 7.653GiB,1.33%;,11
+02:09:33,task1-app-1,258.95%,619.2MiB / 7.653GiB,7.90%;task1-postgres-1,337.93%,105.6MiB / 7.653GiB,1.35%;,11
+02:09:38,task1-app-1,0.29%,618.9MiB / 7.653GiB,7.90%;task1-postgres-1,0.18%,106.6MiB / 7.653GiB,1.36%;,11

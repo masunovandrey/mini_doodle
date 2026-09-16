@@ -1,0 +1,20 @@
+time,dockerstats,pg_active_backends
+02:06:55,task1-app-1,234.33%,467.7MiB / 7.653GiB,5.97%;task1-postgres-1,24.46%,81.16MiB / 7.653GiB,1.04%;,11
+02:06:59,task1-app-1,995.80%,507.8MiB / 7.653GiB,6.48%;task1-postgres-1,155.13%,80.99MiB / 7.653GiB,1.03%;,11
+02:07:04,task1-app-1,872.41%,535.9MiB / 7.653GiB,6.84%;task1-postgres-1,168.87%,81.21MiB / 7.653GiB,1.04%;,11
+02:07:08,task1-app-1,803.44%,586MiB / 7.653GiB,7.48%;task1-postgres-1,161.06%,81.52MiB / 7.653GiB,1.04%;,11
+02:07:13,task1-app-1,713.95%,586.3MiB / 7.653GiB,7.48%;task1-postgres-1,201.29%,81.42MiB / 7.653GiB,1.04%;,11
+02:07:18,task1-app-1,424.90%,620.4MiB / 7.653GiB,7.92%;task1-postgres-1,191.17%,81.5MiB / 7.653GiB,1.04%;,11
+02:07:23,task1-app-1,426.31%,620.6MiB / 7.653GiB,7.92%;task1-postgres-1,191.77%,81.6MiB / 7.653GiB,1.04%;,11
+02:07:29,task1-app-1,415.12%,620.3MiB / 7.653GiB,7.92%;task1-postgres-1,195.83%,81.16MiB / 7.653GiB,1.04%;,11
+02:07:33,task1-app-1,431.29%,620.5MiB / 7.653GiB,7.92%;task1-postgres-1,202.35%,81.59MiB / 7.653GiB,1.04%;,11
+02:07:38,task1-app-1,401.56%,620.6MiB / 7.653GiB,7.92%;task1-postgres-1,194.40%,81.65MiB / 7.653GiB,1.04%;,11
+02:07:43,task1-app-1,394.11%,620.5MiB / 7.653GiB,7.92%;task1-postgres-1,194.28%,80.98MiB / 7.653GiB,1.03%;,11
+02:07:48,task1-app-1,328.54%,620.4MiB / 7.653GiB,7.92%;task1-postgres-1,190.96%,81.62MiB / 7.653GiB,1.04%;,11
+02:07:52,task1-app-1,405.25%,620.5MiB / 7.653GiB,7.92%;task1-postgres-1,183.49%,81.01MiB / 7.653GiB,1.03%;,11
+02:07:56,task1-app-1,19.21%,620.5MiB / 7.653GiB,7.92%;task1-postgres-1,9.75%,81.18MiB / 7.653GiB,1.04%;,11
+02:08:00,task1-app-1,0.30%,620.2MiB / 7.653GiB,7.91%;task1-postgres-1,0.00%,80.96MiB / 7.653GiB,1.03%;,11
+02:08:04,task1-app-1,0.34%,620.2MiB / 7.653GiB,7.91%;task1-postgres-1,0.00%,80.74MiB / 7.653GiB,1.03%;,11
+02:08:08,task1-app-1,0.28%,620.2MiB / 7.653GiB,7.91%;task1-postgres-1,4.56%,80.99MiB / 7.653GiB,1.03%;,11
+02:08:11,task1-app-1,0.39%,618.9MiB / 7.653GiB,7.90%;task1-postgres-1,0.00%,80.83MiB / 7.653GiB,1.03%;,11
+02:08:16,task1-app-1,0.30%,618.9MiB / 7.653GiB,7.90%;task1-postgres-1,0.01%,80.85MiB / 7.653GiB,1.03%;,11

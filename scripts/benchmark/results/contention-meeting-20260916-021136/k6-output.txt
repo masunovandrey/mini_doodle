@@ -1,0 +1,55 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: /work/scripts/benchmark/contention-meeting.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 25 max VUs, 1m0s max duration (incl. graceful stop):
+              * meeting_race: 25 iterations shared among 25 VUs (maxDuration: 30s, gracefulStop: 30s)
+
+
+
+  █ THRESHOLDS 
+
+    valid_outcome_201_or_409
+    ✓ 'rate==1' rate=100.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 25      200.257082/s
+    checks_succeeded...: 100.00% 25 out of 25
+    checks_failed......: 0.00%   0 out of 25
+
+    ✓ responds with 201 or 409 only
+
+    CUSTOM
+    meeting_losers_409.............: 24      192.246799/s
+    meeting_winners_201............: 1       8.010283/s
+    valid_outcome_201_or_409.......: 100.00% 25 out of 25
+
+    HTTP
+    http_req_duration..............: avg=104.74ms min=68.25ms med=105.42ms max=114.02ms p(90)=111.92ms p(95)=112.86ms
+      { expected_response:true }...: avg=68.25ms  min=68.25ms med=68.25ms  max=68.25ms  p(90)=68.25ms  p(95)=68.25ms 
+    http_req_failed................: 96.00%  24 out of 25
+    http_reqs......................: 25      200.257082/s
+
+    EXECUTION
+    iteration_duration.............: avg=118.26ms min=78.6ms  med=119.43ms max=124.1ms  p(90)=123.29ms p(95)=123.51ms
+    iterations.....................: 25      200.257082/s
+
+    NETWORK
+    data_received..................: 8.9 kB  71 kB/s
+    data_sent......................: 8.9 kB  71 kB/s
+
+
+
+
+running (0m00.1s), 00/25 VUs, 25 complete and 0 interrupted iterations
+meeting_race ✓ [ 100% ] 25 VUs  00.1s/30s  25/25 shared iters

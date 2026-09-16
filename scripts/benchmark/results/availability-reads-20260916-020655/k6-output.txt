@@ -1,0 +1,316 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: /work/scripts/benchmark/availability-reads.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 20 max VUs, 1m30s max duration (incl. graceful stop):
+              * availability_reads: 20 looping VUs for 1m0s (gracefulStop: 30s)
+
+
+running (0m01.0s), 20/20 VUs, 431 complete and 0 interrupted iterations
+availability_reads   [   2% ] 20 VUs  0m01.0s/1m0s
+
+running (0m02.0s), 20/20 VUs, 1033 complete and 0 interrupted iterations
+availability_reads   [   3% ] 20 VUs  0m02.0s/1m0s
+
+running (0m03.0s), 20/20 VUs, 1856 complete and 0 interrupted iterations
+availability_reads   [   5% ] 20 VUs  0m03.0s/1m0s
+
+running (0m04.0s), 20/20 VUs, 2822 complete and 0 interrupted iterations
+availability_reads   [   7% ] 20 VUs  0m04.0s/1m0s
+
+running (0m05.0s), 20/20 VUs, 3814 complete and 0 interrupted iterations
+availability_reads   [   8% ] 20 VUs  0m05.0s/1m0s
+
+running (0m06.0s), 20/20 VUs, 4749 complete and 0 interrupted iterations
+availability_reads   [  10% ] 20 VUs  0m06.0s/1m0s
+
+running (0m07.0s), 20/20 VUs, 6103 complete and 0 interrupted iterations
+availability_reads   [  12% ] 20 VUs  0m07.0s/1m0s
+
+running (0m08.0s), 20/20 VUs, 7257 complete and 0 interrupted iterations
+availability_reads   [  13% ] 20 VUs  0m08.0s/1m0s
+
+running (0m09.0s), 20/20 VUs, 8258 complete and 0 interrupted iterations
+availability_reads   [  15% ] 20 VUs  0m09.0s/1m0s
+
+running (0m10.0s), 20/20 VUs, 9342 complete and 0 interrupted iterations
+availability_reads   [  17% ] 20 VUs  0m10.0s/1m0s
+
+running (0m11.0s), 20/20 VUs, 10717 complete and 0 interrupted iterations
+availability_reads   [  18% ] 20 VUs  0m11.0s/1m0s
+
+running (0m12.0s), 20/20 VUs, 12122 complete and 0 interrupted iterations
+availability_reads   [  20% ] 20 VUs  0m12.0s/1m0s
+
+running (0m13.0s), 20/20 VUs, 13613 complete and 0 interrupted iterations
+availability_reads   [  22% ] 20 VUs  0m13.0s/1m0s
+
+running (0m14.0s), 20/20 VUs, 14973 complete and 0 interrupted iterations
+availability_reads   [  23% ] 20 VUs  0m14.0s/1m0s
+
+running (0m15.0s), 20/20 VUs, 15860 complete and 0 interrupted iterations
+availability_reads   [  25% ] 20 VUs  0m15.0s/1m0s
+
+running (0m16.0s), 20/20 VUs, 17011 complete and 0 interrupted iterations
+availability_reads   [  27% ] 20 VUs  0m16.0s/1m0s
+
+running (0m17.0s), 20/20 VUs, 18324 complete and 0 interrupted iterations
+availability_reads   [  28% ] 20 VUs  0m17.0s/1m0s
+
+running (0m18.0s), 20/20 VUs, 19591 complete and 0 interrupted iterations
+availability_reads   [  30% ] 20 VUs  0m18.0s/1m0s
+
+running (0m19.0s), 20/20 VUs, 21386 complete and 0 interrupted iterations
+availability_reads   [  32% ] 20 VUs  0m19.0s/1m0s
+
+running (0m20.0s), 20/20 VUs, 22168 complete and 0 interrupted iterations
+availability_reads   [  33% ] 20 VUs  0m20.0s/1m0s
+
+running (0m21.0s), 20/20 VUs, 24009 complete and 0 interrupted iterations
+availability_reads   [  35% ] 20 VUs  0m21.0s/1m0s
+
+running (0m22.0s), 20/20 VUs, 26306 complete and 0 interrupted iterations
+availability_reads   [  37% ] 20 VUs  0m22.0s/1m0s
+
+running (0m23.0s), 20/20 VUs, 28645 complete and 0 interrupted iterations
+availability_reads   [  38% ] 20 VUs  0m23.0s/1m0s
+
+running (0m24.0s), 20/20 VUs, 30806 complete and 0 interrupted iterations
+availability_reads   [  40% ] 20 VUs  0m24.0s/1m0s
+
+running (0m25.0s), 20/20 VUs, 32930 complete and 0 interrupted iterations
+availability_reads   [  42% ] 20 VUs  0m25.0s/1m0s
+
+running (0m26.0s), 20/20 VUs, 34946 complete and 0 interrupted iterations
+availability_reads   [  43% ] 20 VUs  0m26.0s/1m0s
+
+running (0m27.0s), 20/20 VUs, 36197 complete and 0 interrupted iterations
+availability_reads   [  45% ] 20 VUs  0m27.0s/1m0s
+
+running (0m28.0s), 20/20 VUs, 37670 complete and 0 interrupted iterations
+availability_reads   [  47% ] 20 VUs  0m28.0s/1m0s
+
+running (0m29.0s), 20/20 VUs, 38709 complete and 0 interrupted iterations
+availability_reads   [  48% ] 20 VUs  0m29.0s/1m0s
+
+running (0m29.9s), 20/20 VUs, 39059 complete and 0 interrupted iterations
+availability_reads   [  50% ] 20 VUs  0m30.0s/1m0s
+
+running (0m30.9s), 20/20 VUs, 39833 complete and 0 interrupted iterations
+availability_reads   [  52% ] 20 VUs  0m31.0s/1m0s
+
+running (0m31.9s), 20/20 VUs, 41639 complete and 0 interrupted iterations
+availability_reads   [  53% ] 20 VUs  0m32.0s/1m0s
+
+running (0m32.9s), 20/20 VUs, 43202 complete and 0 interrupted iterations
+availability_reads   [  55% ] 20 VUs  0m33.0s/1m0s
+
+running (0m33.9s), 20/20 VUs, 44887 complete and 0 interrupted iterations
+availability_reads   [  57% ] 20 VUs  0m34.0s/1m0s
+
+running (0m34.9s), 20/20 VUs, 46645 complete and 0 interrupted iterations
+availability_reads   [  58% ] 20 VUs  0m35.0s/1m0s
+
+running (0m35.9s), 20/20 VUs, 48409 complete and 0 interrupted iterations
+availability_reads   [  60% ] 20 VUs  0m36.0s/1m0s
+
+running (0m36.9s), 20/20 VUs, 50088 complete and 0 interrupted iterations
+availability_reads   [  62% ] 20 VUs  0m37.0s/1m0s
+
+running (0m37.9s), 20/20 VUs, 52029 complete and 0 interrupted iterations
+availability_reads   [  63% ] 20 VUs  0m38.0s/1m0s
+
+running (0m38.9s), 20/20 VUs, 54120 complete and 0 interrupted iterations
+availability_reads   [  65% ] 20 VUs  0m39.0s/1m0s
+
+running (0m39.9s), 20/20 VUs, 55927 complete and 0 interrupted iterations
+availability_reads   [  67% ] 20 VUs  0m40.0s/1m0s
+
+running (0m40.9s), 20/20 VUs, 58008 complete and 0 interrupted iterations
+availability_reads   [  68% ] 20 VUs  0m41.0s/1m0s
+
+running (0m41.9s), 20/20 VUs, 59808 complete and 0 interrupted iterations
+availability_reads   [  70% ] 20 VUs  0m42.0s/1m0s
+
+running (0m42.9s), 20/20 VUs, 61883 complete and 0 interrupted iterations
+availability_reads   [  72% ] 20 VUs  0m43.0s/1m0s
+
+running (0m43.9s), 20/20 VUs, 63732 complete and 0 interrupted iterations
+availability_reads   [  73% ] 20 VUs  0m44.0s/1m0s
+
+running (0m44.9s), 20/20 VUs, 64836 complete and 0 interrupted iterations
+availability_reads   [  75% ] 20 VUs  0m45.0s/1m0s
+
+running (0m45.9s), 20/20 VUs, 66752 complete and 0 interrupted iterations
+availability_reads   [  77% ] 20 VUs  0m46.0s/1m0s
+
+running (0m46.9s), 20/20 VUs, 68672 complete and 0 interrupted iterations
+availability_reads   [  78% ] 20 VUs  0m47.0s/1m0s
+
+running (0m47.9s), 20/20 VUs, 70661 complete and 0 interrupted iterations
+availability_reads   [  80% ] 20 VUs  0m48.0s/1m0s
+
+running (0m48.9s), 20/20 VUs, 72320 complete and 0 interrupted iterations
+availability_reads   [  82% ] 20 VUs  0m49.0s/1m0s
+
+running (0m49.9s), 20/20 VUs, 74091 complete and 0 interrupted iterations
+availability_reads   [  83% ] 20 VUs  0m50.0s/1m0s
+
+running (0m50.9s), 20/20 VUs, 75966 complete and 0 interrupted iterations
+availability_reads   [  85% ] 20 VUs  0m51.0s/1m0s
+
+running (0m51.9s), 20/20 VUs, 77540 complete and 0 interrupted iterations
+availability_reads   [  87% ] 20 VUs  0m52.0s/1m0s
+
+running (0m52.9s), 20/20 VUs, 78676 complete and 0 interrupted iterations
+availability_reads   [  88% ] 20 VUs  0m53.0s/1m0s
+
+running (0m53.9s), 20/20 VUs, 79861 complete and 0 interrupted iterations
+availability_reads   [  90% ] 20 VUs  0m54.0s/1m0s
+
+running (0m54.9s), 20/20 VUs, 80916 complete and 0 interrupted iterations
+availability_reads   [  92% ] 20 VUs  0m55.0s/1m0s
+
+running (0m55.9s), 20/20 VUs, 82124 complete and 0 interrupted iterations
+availability_reads   [  93% ] 20 VUs  0m56.0s/1m0s
+
+running (0m56.9s), 20/20 VUs, 83141 complete and 0 interrupted iterations
+availability_reads   [  95% ] 20 VUs  0m57.0s/1m0s
+
+running (0m57.9s), 20/20 VUs, 84380 complete and 0 interrupted iterations
+availability_reads   [  97% ] 20 VUs  0m58.0s/1m0s
+
+running (0m58.9s), 20/20 VUs, 85467 complete and 0 interrupted iterations
+availability_reads   [  98% ] 20 VUs  0m59.0s/1m0s
+
+running (1m00.0s), 20/20 VUs, 86539 complete and 0 interrupted iterations
+availability_reads   [ 100% ] 20 VUs  1m00.0s/1m0s
+
+running (1m01.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m02.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m03.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m04.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m05.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m06.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m07.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m08.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m09.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m10.0s), 09/20 VUs, 86614 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+time="2026-09-16T00:08:07Z" level=warning msg="Request Failed" error="Get \"http://host.docker.internal:8080/calendars/7f021758-a9b9-4693-9b1c-630b50807bfd/availability?start=2035-02-01T08:00:00Z&end=2035-03-15T18:00:00Z\": dial: i/o timeout"
+time="2026-09-16T00:08:07Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat availability returns intervals (file:///work/scripts/benchmark/availability-reads.js:33:56(4))\n\tat go.k6.io/k6/v2/internal/js/modules/k6.(*K6).Check-fm (native)\n\tat default (file:///work/scripts/benchmark/availability-reads.js:31:10(33))\n" executor=constant-vus hint="script exception" scenario=availability_reads source=stacktrace
+time="2026-09-16T00:08:07Z" level=warning msg="Request Failed" error="Get \"http://host.docker.internal:8080/calendars/4626113e-7079-4f99-9b4f-60fcda34faa0/availability?start=2035-02-01T08:00:00Z&end=2035-03-15T18:00:00Z\": dial: i/o timeout"
+time="2026-09-16T00:08:07Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat availability returns intervals (file:///work/scripts/benchmark/availability-reads.js:33:56(4))\n\tat go.k6.io/k6/v2/internal/js/modules/k6.(*K6).Check-fm (native)\n\tat default (file:///work/scripts/benchmark/availability-reads.js:31:10(33))\n" executor=constant-vus hint="script exception" scenario=availability_reads source=stacktrace
+time="2026-09-16T00:08:07Z" level=warning msg="Request Failed" error="Get \"http://host.docker.internal:8080/calendars/c45cdcc6-55e3-415a-b14c-b7aaeee12fde/availability?start=2035-02-01T08:00:00Z&end=2035-03-15T18:00:00Z\": dial: i/o timeout"
+time="2026-09-16T00:08:07Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat availability returns intervals (file:///work/scripts/benchmark/availability-reads.js:33:56(4))\n\tat go.k6.io/k6/v2/internal/js/modules/k6.(*K6).Check-fm (native)\n\tat default (file:///work/scripts/benchmark/availability-reads.js:31:10(33))\n" executor=constant-vus hint="script exception" scenario=availability_reads source=stacktrace
+
+running (1m11.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m12.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m13.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m14.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m15.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m16.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m17.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m18.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m19.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m20.0s), 06/20 VUs, 86617 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+time="2026-09-16T00:08:17Z" level=warning msg="Request Failed" error="Get \"http://host.docker.internal:8080/calendars/a188aad8-79da-4e06-bb73-7827621954d7/availability?start=2035-02-01T08:00:00Z&end=2035-03-15T18:00:00Z\": dial: i/o timeout"
+time="2026-09-16T00:08:17Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat availability returns intervals (file:///work/scripts/benchmark/availability-reads.js:33:56(4))\n\tat go.k6.io/k6/v2/internal/js/modules/k6.(*K6).Check-fm (native)\n\tat default (file:///work/scripts/benchmark/availability-reads.js:31:10(33))\n" executor=constant-vus hint="script exception" scenario=availability_reads source=stacktrace
+time="2026-09-16T00:08:17Z" level=warning msg="Request Failed" error="Get \"http://host.docker.internal:8080/calendars/6727df6c-24f2-473d-8a30-6df08e3a48bd/availability?start=2035-02-01T08:00:00Z&end=2035-03-15T18:00:00Z\": dial: i/o timeout"
+time="2026-09-16T00:08:17Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat availability returns intervals (file:///work/scripts/benchmark/availability-reads.js:33:56(4))\n\tat go.k6.io/k6/v2/internal/js/modules/k6.(*K6).Check-fm (native)\n\tat default (file:///work/scripts/benchmark/availability-reads.js:31:10(33))\n" executor=constant-vus hint="script exception" scenario=availability_reads source=stacktrace
+
+running (1m21.0s), 04/20 VUs, 86619 complete and 0 interrupted iterations
+availability_reads ↓ [ 100% ] 20 VUs  1m0s
+time="2026-09-16T00:08:17Z" level=warning msg="Request Failed" error="Get \"http://host.docker.internal:8080/calendars/519ad491-9e09-4e66-ae1a-7468d9cf4fd4/availability?start=2035-02-01T08:00:00Z&end=2035-03-15T18:00:00Z\": dial: i/o timeout"
+time="2026-09-16T00:08:17Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat availability returns intervals (file:///work/scripts/benchmark/availability-reads.js:33:56(4))\n\tat go.k6.io/k6/v2/internal/js/modules/k6.(*K6).Check-fm (native)\n\tat default (file:///work/scripts/benchmark/availability-reads.js:31:10(33))\n" executor=constant-vus hint="script exception" scenario=availability_reads source=stacktrace
+time="2026-09-16T00:08:17Z" level=warning msg="Request Failed" error="Get \"http://host.docker.internal:8080/calendars/0041679e-8a03-4591-a78d-2745416ec5f5/availability?start=2035-02-01T08:00:00Z&end=2035-03-15T18:00:00Z\": dial: i/o timeout"
+time="2026-09-16T00:08:17Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat availability returns intervals (file:///work/scripts/benchmark/availability-reads.js:33:56(4))\n\tat go.k6.io/k6/v2/internal/js/modules/k6.(*K6).Check-fm (native)\n\tat default (file:///work/scripts/benchmark/availability-reads.js:31:10(33))\n" executor=constant-vus hint="script exception" scenario=availability_reads source=stacktrace
+time="2026-09-16T00:08:18Z" level=warning msg="Request Failed" error="Get \"http://host.docker.internal:8080/calendars/7f25315e-9e9e-43d5-9e9a-604f0d701cf5/availability?start=2035-02-01T08:00:00Z&end=2035-03-15T18:00:00Z\": dial: i/o timeout"
+time="2026-09-16T00:08:18Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat availability returns intervals (file:///work/scripts/benchmark/availability-reads.js:33:56(4))\n\tat go.k6.io/k6/v2/internal/js/modules/k6.(*K6).Check-fm (native)\n\tat default (file:///work/scripts/benchmark/availability-reads.js:31:10(33))\n" executor=constant-vus hint="script exception" scenario=availability_reads source=stacktrace
+time="2026-09-16T00:08:18Z" level=warning msg="Request Failed" error="Get \"http://host.docker.internal:8080/calendars/b5ca3de8-542f-4056-9805-3cd318f7fbc2/availability?start=2035-02-01T08:00:00Z&end=2035-03-15T18:00:00Z\": dial: i/o timeout"
+time="2026-09-16T00:08:18Z" level=error msg="GoError: the body is null so we can't transform it to JSON - this likely was because of a request error getting the response\n\tat reflect.methodValueCall (native)\n\tat availability returns intervals (file:///work/scripts/benchmark/availability-reads.js:33:56(4))\n\tat go.k6.io/k6/v2/internal/js/modules/k6.(*K6).Check-fm (native)\n\tat default (file:///work/scripts/benchmark/availability-reads.js:31:10(33))\n" executor=constant-vus hint="script exception" scenario=availability_reads source=stacktrace
+
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.01%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 173246 2129.973192/s
+    checks_succeeded...: 99.98% 173228 out of 173246
+    checks_failed......: 0.01%  18 out of 173246
+
+    ✗ availability returns 200
+      ↳  99% — ✓ 86614 / ✗ 9
+    ✗ availability returns intervals
+      ↳  99% — ✓ 86614 / ✗ 9
+
+    HTTP
+    http_req_duration..............: avg=11.92ms min=0s     med=9.22ms max=326.16ms p(90)=19.25ms p(95)=25.77ms
+      { expected_response:true }...: avg=11.92ms min=2.71ms med=9.22ms max=326.16ms p(90)=19.25ms p(95)=25.77ms
+    http_req_failed................: 0.01%  9 out of 86623
+    http_reqs......................: 86623  1064.986596/s
+
+    EXECUTION
+    iteration_duration.............: avg=15.63ms min=2.9ms  med=9.74ms max=30s      p(90)=20.11ms p(95)=26.82ms
+    iterations.....................: 86623  1064.986596/s
+    vus............................: 4      min=4          max=20
+    vus_max........................: 20     min=20         max=20
+
+    NETWORK
+    data_received..................: 300 MB 3.7 MB/s
+    data_sent......................: 17 MB  205 kB/s
+
+
+
+
+running (1m21.3s), 00/20 VUs, 86623 complete and 0 interrupted iterations
+availability_reads ✓ [ 100% ] 20 VUs  1m0s

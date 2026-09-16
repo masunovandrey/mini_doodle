@@ -1,0 +1,252 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: /work/scripts/benchmark/independent-slot-writes.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 20 max VUs, 1m30s max duration (incl. graceful stop):
+              * independent_slot_writes: 20 looping VUs for 1m0s (gracefulStop: 30s)
+
+
+running (0m01.0s), 20/20 VUs, 1408 complete and 0 interrupted iterations
+independent_slot_writes   [   2% ] 20 VUs  0m01.0s/1m0s
+
+running (0m02.0s), 20/20 VUs, 2820 complete and 0 interrupted iterations
+independent_slot_writes   [   3% ] 20 VUs  0m02.0s/1m0s
+
+running (0m03.0s), 20/20 VUs, 4479 complete and 0 interrupted iterations
+independent_slot_writes   [   5% ] 20 VUs  0m03.0s/1m0s
+
+running (0m04.0s), 20/20 VUs, 5822 complete and 0 interrupted iterations
+independent_slot_writes   [   7% ] 20 VUs  0m04.0s/1m0s
+
+running (0m05.0s), 20/20 VUs, 7273 complete and 0 interrupted iterations
+independent_slot_writes   [   8% ] 20 VUs  0m05.0s/1m0s
+
+running (0m06.0s), 20/20 VUs, 8378 complete and 0 interrupted iterations
+independent_slot_writes   [  10% ] 20 VUs  0m06.0s/1m0s
+
+running (0m07.0s), 20/20 VUs, 9643 complete and 0 interrupted iterations
+independent_slot_writes   [  12% ] 20 VUs  0m07.0s/1m0s
+
+running (0m08.0s), 20/20 VUs, 10940 complete and 0 interrupted iterations
+independent_slot_writes   [  13% ] 20 VUs  0m08.0s/1m0s
+
+running (0m09.0s), 20/20 VUs, 11928 complete and 0 interrupted iterations
+independent_slot_writes   [  15% ] 20 VUs  0m09.0s/1m0s
+
+running (0m10.0s), 20/20 VUs, 13621 complete and 0 interrupted iterations
+independent_slot_writes   [  17% ] 20 VUs  0m10.0s/1m0s
+
+running (0m11.0s), 20/20 VUs, 15255 complete and 0 interrupted iterations
+independent_slot_writes   [  18% ] 20 VUs  0m11.0s/1m0s
+
+running (0m12.0s), 20/20 VUs, 16579 complete and 0 interrupted iterations
+independent_slot_writes   [  20% ] 20 VUs  0m12.0s/1m0s
+
+running (0m13.1s), 20/20 VUs, 17599 complete and 0 interrupted iterations
+independent_slot_writes   [  22% ] 20 VUs  0m13.1s/1m0s
+
+running (0m14.0s), 20/20 VUs, 18590 complete and 0 interrupted iterations
+independent_slot_writes   [  23% ] 20 VUs  0m14.0s/1m0s
+
+running (0m15.0s), 20/20 VUs, 19685 complete and 0 interrupted iterations
+independent_slot_writes   [  25% ] 20 VUs  0m15.0s/1m0s
+
+running (0m16.0s), 20/20 VUs, 20802 complete and 0 interrupted iterations
+independent_slot_writes   [  27% ] 20 VUs  0m16.0s/1m0s
+
+running (0m17.0s), 20/20 VUs, 21831 complete and 0 interrupted iterations
+independent_slot_writes   [  28% ] 20 VUs  0m17.0s/1m0s
+
+running (0m18.0s), 20/20 VUs, 23281 complete and 0 interrupted iterations
+independent_slot_writes   [  30% ] 20 VUs  0m18.0s/1m0s
+
+running (0m19.0s), 20/20 VUs, 24579 complete and 0 interrupted iterations
+independent_slot_writes   [  32% ] 20 VUs  0m19.0s/1m0s
+
+running (0m20.0s), 20/20 VUs, 25922 complete and 0 interrupted iterations
+independent_slot_writes   [  33% ] 20 VUs  0m20.0s/1m0s
+
+running (0m21.0s), 20/20 VUs, 26958 complete and 0 interrupted iterations
+independent_slot_writes   [  35% ] 20 VUs  0m21.0s/1m0s
+
+running (0m22.0s), 20/20 VUs, 28034 complete and 0 interrupted iterations
+independent_slot_writes   [  37% ] 20 VUs  0m22.0s/1m0s
+
+running (0m23.0s), 20/20 VUs, 28594 complete and 0 interrupted iterations
+independent_slot_writes   [  38% ] 20 VUs  0m23.0s/1m0s
+
+running (0m24.0s), 20/20 VUs, 29169 complete and 0 interrupted iterations
+independent_slot_writes   [  40% ] 20 VUs  0m24.0s/1m0s
+
+running (0m25.0s), 20/20 VUs, 29775 complete and 0 interrupted iterations
+independent_slot_writes   [  42% ] 20 VUs  0m25.0s/1m0s
+
+running (0m26.0s), 20/20 VUs, 30592 complete and 0 interrupted iterations
+independent_slot_writes   [  43% ] 20 VUs  0m26.0s/1m0s
+
+running (0m27.0s), 20/20 VUs, 31533 complete and 0 interrupted iterations
+independent_slot_writes   [  45% ] 20 VUs  0m27.0s/1m0s
+
+running (0m28.0s), 20/20 VUs, 32540 complete and 0 interrupted iterations
+independent_slot_writes   [  47% ] 20 VUs  0m28.0s/1m0s
+
+running (0m29.0s), 20/20 VUs, 33566 complete and 0 interrupted iterations
+independent_slot_writes   [  48% ] 20 VUs  0m29.0s/1m0s
+
+running (0m30.0s), 20/20 VUs, 34558 complete and 0 interrupted iterations
+independent_slot_writes   [  50% ] 20 VUs  0m30.0s/1m0s
+
+running (0m31.0s), 20/20 VUs, 35644 complete and 0 interrupted iterations
+independent_slot_writes   [  52% ] 20 VUs  0m31.0s/1m0s
+
+running (0m32.0s), 20/20 VUs, 36805 complete and 0 interrupted iterations
+independent_slot_writes   [  53% ] 20 VUs  0m32.0s/1m0s
+
+running (0m33.0s), 20/20 VUs, 38083 complete and 0 interrupted iterations
+independent_slot_writes   [  55% ] 20 VUs  0m33.0s/1m0s
+
+running (0m34.0s), 20/20 VUs, 39270 complete and 0 interrupted iterations
+independent_slot_writes   [  57% ] 20 VUs  0m34.0s/1m0s
+
+running (0m35.0s), 20/20 VUs, 40357 complete and 0 interrupted iterations
+independent_slot_writes   [  58% ] 20 VUs  0m35.0s/1m0s
+
+running (0m36.0s), 20/20 VUs, 41566 complete and 0 interrupted iterations
+independent_slot_writes   [  60% ] 20 VUs  0m36.0s/1m0s
+
+running (0m37.0s), 20/20 VUs, 42535 complete and 0 interrupted iterations
+independent_slot_writes   [  62% ] 20 VUs  0m37.0s/1m0s
+
+running (0m38.0s), 20/20 VUs, 43295 complete and 0 interrupted iterations
+independent_slot_writes   [  63% ] 20 VUs  0m38.0s/1m0s
+
+running (0m39.0s), 20/20 VUs, 44262 complete and 0 interrupted iterations
+independent_slot_writes   [  65% ] 20 VUs  0m39.0s/1m0s
+
+running (0m40.0s), 20/20 VUs, 45428 complete and 0 interrupted iterations
+independent_slot_writes   [  67% ] 20 VUs  0m40.0s/1m0s
+
+running (0m41.0s), 20/20 VUs, 46583 complete and 0 interrupted iterations
+independent_slot_writes   [  68% ] 20 VUs  0m41.0s/1m0s
+
+running (0m42.0s), 20/20 VUs, 47648 complete and 0 interrupted iterations
+independent_slot_writes   [  70% ] 20 VUs  0m42.0s/1m0s
+
+running (0m43.0s), 20/20 VUs, 48850 complete and 0 interrupted iterations
+independent_slot_writes   [  72% ] 20 VUs  0m43.0s/1m0s
+
+running (0m44.0s), 20/20 VUs, 49990 complete and 0 interrupted iterations
+independent_slot_writes   [  73% ] 20 VUs  0m44.0s/1m0s
+
+running (0m45.0s), 20/20 VUs, 51128 complete and 0 interrupted iterations
+independent_slot_writes   [  75% ] 20 VUs  0m45.0s/1m0s
+
+running (0m46.0s), 20/20 VUs, 52293 complete and 0 interrupted iterations
+independent_slot_writes   [  77% ] 20 VUs  0m46.0s/1m0s
+
+running (0m47.0s), 20/20 VUs, 53343 complete and 0 interrupted iterations
+independent_slot_writes   [  78% ] 20 VUs  0m47.0s/1m0s
+
+running (0m48.0s), 20/20 VUs, 54473 complete and 0 interrupted iterations
+independent_slot_writes   [  80% ] 20 VUs  0m48.0s/1m0s
+
+running (0m49.0s), 20/20 VUs, 55528 complete and 0 interrupted iterations
+independent_slot_writes   [  82% ] 20 VUs  0m49.0s/1m0s
+
+running (0m50.0s), 20/20 VUs, 56471 complete and 0 interrupted iterations
+independent_slot_writes   [  83% ] 20 VUs  0m50.0s/1m0s
+
+running (0m51.0s), 20/20 VUs, 57000 complete and 0 interrupted iterations
+independent_slot_writes   [  85% ] 20 VUs  0m51.0s/1m0s
+
+running (0m52.0s), 20/20 VUs, 57806 complete and 0 interrupted iterations
+independent_slot_writes   [  87% ] 20 VUs  0m52.0s/1m0s
+
+running (0m53.0s), 20/20 VUs, 58383 complete and 0 interrupted iterations
+independent_slot_writes   [  88% ] 20 VUs  0m53.0s/1m0s
+
+running (0m54.0s), 20/20 VUs, 59222 complete and 0 interrupted iterations
+independent_slot_writes   [  90% ] 20 VUs  0m54.0s/1m0s
+
+running (0m55.0s), 20/20 VUs, 60371 complete and 0 interrupted iterations
+independent_slot_writes   [  92% ] 20 VUs  0m55.0s/1m0s
+
+running (0m56.0s), 20/20 VUs, 61397 complete and 0 interrupted iterations
+independent_slot_writes   [  93% ] 20 VUs  0m56.0s/1m0s
+
+running (0m57.0s), 20/20 VUs, 62348 complete and 0 interrupted iterations
+independent_slot_writes   [  95% ] 20 VUs  0m57.0s/1m0s
+
+running (0m58.0s), 20/20 VUs, 63473 complete and 0 interrupted iterations
+independent_slot_writes   [  97% ] 20 VUs  0m58.0s/1m0s
+
+running (0m59.0s), 20/20 VUs, 64566 complete and 0 interrupted iterations
+independent_slot_writes   [  98% ] 20 VUs  0m59.0s/1m0s
+
+running (1m00.0s), 20/20 VUs, 65674 complete and 0 interrupted iterations
+independent_slot_writes   [ 100% ] 20 VUs  1m00.0s/1m0s
+
+running (1m01.0s), 07/20 VUs, 65715 complete and 0 interrupted iterations
+independent_slot_writes ↓ [ 100% ] 20 VUs  1m0s
+
+running (1m02.0s), 07/20 VUs, 65715 complete and 0 interrupted iterations
+independent_slot_writes ↓ [ 100% ] 20 VUs  1m0s
+time="2026-09-16T00:09:38Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8080/calendars/2e9f6a51-b782-4cef-84eb-8eeb0665b9a7/slots\": dial: i/o timeout"
+time="2026-09-16T00:09:38Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8080/calendars/dba6af2e-92e6-4f2f-a62c-2c77321d576d/slots\": dial: i/o timeout"
+time="2026-09-16T00:09:38Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8080/calendars/37bb0b92-8a5d-4d8a-8e0b-89d64cb1241e/slots\": dial: i/o timeout"
+
+running (1m03.0s), 04/20 VUs, 65718 complete and 0 interrupted iterations
+independent_slot_writes ↓ [ 100% ] 20 VUs  1m0s
+time="2026-09-16T00:09:39Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8080/calendars/67c9345e-ea2e-464c-8fdd-635114ee0236/slots\": dial: i/o timeout"
+time="2026-09-16T00:09:39Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8080/calendars/6c7b2849-a59e-422a-a9fd-2ddf0c7b596e/slots\": dial: i/o timeout"
+time="2026-09-16T00:09:39Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8080/calendars/ffa7114f-2a1c-4ded-82da-96ab581ecff5/slots\": dial: i/o timeout"
+
+running (1m04.0s), 01/20 VUs, 65721 complete and 0 interrupted iterations
+independent_slot_writes ↓ [ 100% ] 20 VUs  1m0s
+time="2026-09-16T00:09:40Z" level=warning msg="Request Failed" error="Post \"http://host.docker.internal:8080/calendars/621ed2d0-8b47-4d06-afb8-3e9fd336cf58/slots\": dial: i/o timeout"
+
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.01%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 65722  1022.604507/s
+    checks_succeeded...: 99.98% 65715 out of 65722
+    checks_failed......: 0.01%  7 out of 65722
+
+    ✗ slot created with 201
+      ↳  99% — ✓ 65715 / ✗ 7
+
+    HTTP
+    http_req_duration..............: avg=13.73ms min=0s     med=11.42ms max=224.65ms p(90)=20.89ms p(95)=26.87ms
+      { expected_response:true }...: avg=13.74ms min=3.13ms med=11.43ms max=224.65ms p(90)=20.9ms  p(95)=26.87ms
+    http_req_failed................: 0.01% 7 out of 65722
+    http_reqs......................: 65722 1022.604507/s
+
+    EXECUTION
+    iteration_duration.............: avg=18.57ms min=3.28ms med=11.82ms max=30s      p(90)=21.57ms p(95)=27.8ms 
+    iterations.....................: 65722 1022.604507/s
+    vus............................: 1     min=1          max=20
+    vus_max........................: 20    min=20         max=20
+
+    NETWORK
+    data_received..................: 18 MB 274 kB/s
+    data_sent......................: 17 MB 261 kB/s
+
+
+
+
+running (1m04.3s), 00/20 VUs, 65722 complete and 0 interrupted iterations
+independent_slot_writes ✓ [ 100% ] 20 VUs  1m0s
