@@ -41,6 +41,22 @@ Errors are RFC 9457 Problem Details JSON. Invalid input is `400`, a missing user
 
 Examples below use `curl`; replace the generated IDs with the returned values.
 
+## API contract, Swagger UI, and collection
+
+The running service publishes its OpenAPI description:
+
+```sh
+curl -s http://localhost:8080/v3/api-docs
+```
+
+The generated document (`/v3/api-docs`) describes every endpoint together with its request and response schemas, the `uuid` path parameters, the ISO-8601 UTC date-times, the documented `400`/`404`/`409` RFC 9457 Problem Details responses, and the `ETag`/`If-Match` optimistic-concurrency contract.
+
+Browse and execute the endpoints interactively with Swagger UI at:
+
+```text
+http://localhost:8080/swagger-ui/index.html
+```
+
 ## Create a user and personal calendar (`POST /users`)
 
 ```sh
@@ -120,9 +136,65 @@ Successful result: `200 OK`, for example:
 
 Only stored slots that intersect the frame are returned. Results are clipped to the requested frame and adjacent same-state intervals are merged. The response can contain an empty `intervals` array. A missing, malformed, or non-positive frame is `400`; an unknown calendar is `404`.
 
+## Operational visibility (Actuator health)
+
+The app exposes only Spring Boot Actuator's `health` endpoint; no other Actuator endpoints are
+exposed. Health, readiness, and liveness are available at:
+
+```text
+GET /actuator/health            -> {"status":"UP"}
+GET /actuator/health/readiness  -> {"status":"UP"}   (group used by the Compose healthcheck)
+GET /actuator/health/liveness   -> {"status":"UP"}
+```
+
+```sh
+curl -fsS http://localhost:8080/actuator/health
+```
+
+The Compose deployment waits for PostgreSQL (`pg_isready`), then for the app's readiness group
+before considering the app healthy. Technical choices are recorded as Architecture Decision
+Records in `docs/adr/` (REST/JSON + OpenAPI, UTC half-open intervals, DB non-overlap
+constraint, locking/conversion semantics, package layout, no-cache-until-measured, and
+declared non-goals).
+
+## Performance and concurrency benchmark
+
+A reproducible benchmark suite lives in `scripts/benchmark/` (see its `README.md`):
+
+| Artifact | Purpose |
+|---|---|
+| `seed.py` | Seeds 200 calendars / 10,000 non-overlapping slots via the HTTP API and writes `bench-data.json` |
+| k6 scenarios | `availability-reads`, `independent-slot-writes`, `mixed-traffic`, `contention-meeting` |
+| `run-benchmark.sh` | Runs a scenario in the `grafana/k6` container and captures metrics + environment |
+| `explain-availability.sql` | `EXPLAIN (ANALYZE, BUFFERS)` for the availability and overlap queries |
+| `benchmark-report.md` | Full baseline report (environment, results, resources, query plans) |
+| `results/` | Raw per-run artifacts: `k6-output.txt`, `summary.json`, `metrics.csv`, `environment.md` |
+
+Baseline summary (2026-09-16, local Docker Compose; full details in `benchmark-report.md`):
+
+| Scenario | req/s | p50 | p95 | Error rate |
+|---|---|---|---|---|
+| availability-reads | ~1,065 | 9.2 ms | 25.8 ms | 0.0104% |
+| independent-slot-writes | ~1,023 | 11.4 ms | 26.9 ms | 0.0107% (99.99% → 201) |
+| mixed-traffic (80/20) | ~1,761 | 44.3 ms | 141.7 ms | 0.0054% |
+| contention-meeting | — | 105 ms | — | exactly 1 × 201, 24 × 409 |
+
+Findings: `EXPLAIN ANALYZE` showed sub-millisecond plans served by the existing GiST
+exclusion index, no sequential scans, and a trivial sort — no index or cache change was
+warranted (see `docs/adr/adr-0006-no-cache-until-measured.md`). To rerun a clean baseline:
+wipe and reseed first (`docker compose down -v`), since write scenarios are deterministic.
+
 ## Verification
 
 After startup, run the user, slot, meeting, and availability commands above in order. To confirm persistence, create a user, run `docker compose down`, run `docker compose up --build`, and repeat `GET /users/{userId}`. It should still return `200 OK`.
+
+For a scripted black-box check of a running deployment, execute:
+
+```sh
+scripts/smoke-test.sh
+```
+
+It walks user -> slot -> meeting -> availability and asserts the documented `409` for a meeting-backed slot. Set `BASE_URL` to target a different host. The script needs `curl` and `python3`.
 
 For the Maven integration test suite, Docker must be running because the tests use Testcontainers:
 
