@@ -152,10 +152,7 @@ curl -fsS http://localhost:8080/actuator/health
 ```
 
 The Compose deployment waits for PostgreSQL (`pg_isready`), then for the app's readiness group
-before considering the app healthy. Technical choices are recorded as Architecture Decision
-Records in `docs/adr/` (REST/JSON + OpenAPI, UTC half-open intervals, DB non-overlap
-constraint, locking/conversion semantics, package layout, no-cache-until-measured, and
-declared non-goals).
+before considering the app healthy.
 
 ## Performance and concurrency benchmark
 
