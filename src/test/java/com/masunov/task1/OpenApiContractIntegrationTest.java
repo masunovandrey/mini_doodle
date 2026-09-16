@@ -33,8 +33,8 @@ class OpenApiContractIntegrationTest {
     void publishesOpenApiDocumentThatCoversTheWholeContract() throws Exception {
         JsonNode api = openApiDocument();
 
-        assertTrue(api.path("openapi").asText().startsWith("3."), "OpenAPI 3.x spec version is advertised");
-        assertEquals("Mini Doodle service API", api.path("info").path("title").asText());
+        assertTrue(api.path("openapi").asString().startsWith("3."), "OpenAPI 3.x spec version is advertised");
+        assertEquals("Mini Doodle service API", api.path("info").path("title").asString());
 
         JsonNode paths = api.path("paths");
         assertTrue(paths.path("/users").has("post"), "POST /users is documented");
@@ -66,10 +66,10 @@ class OpenApiContractIntegrationTest {
         assertProblemDetails(schemas.path("ProblemDetails"));
 
         JsonNode slotResponse = schemas.path("SlotResponse");
-        assertEquals("date-time", slotResponse.path("properties").path("start").path("format").asText());
-        assertEquals("date-time", slotResponse.path("properties").path("end").path("format").asText());
-        assertEquals("uuid", slotResponse.path("properties").path("id").path("format").asText());
-        assertEquals("integer", slotResponse.path("properties").path("version").path("type").asText());
+        assertEquals("date-time", slotResponse.path("properties").path("start").path("format").asString());
+        assertEquals("date-time", slotResponse.path("properties").path("end").path("format").asString());
+        assertEquals("uuid", slotResponse.path("properties").path("id").path("format").asString());
+        assertEquals("integer", slotResponse.path("properties").path("version").path("type").asString());
         assertEquals(Set.of("FREE", "BUSY"),
                 enumValues(slotResponse.path("properties").path("state"), schemas),
                 "Slot state enum is documented (inline or by reference)");
@@ -81,13 +81,13 @@ class OpenApiContractIntegrationTest {
 
         JsonNode userGetParameters = api.path("paths").path("/users/{userId}").path("get").path("parameters");
         JsonNode userId = parameterNamed(userGetParameters, "userId");
-        assertEquals("path", userId.path("in").asText());
+        assertEquals("path", userId.path("in").asString());
         assertTrue(userId.path("required").asBoolean());
-        assertEquals("uuid", userId.path("schema").path("format").asText());
+        assertEquals("uuid", userId.path("schema").path("format").asString());
 
         JsonNode slotPutParameters = api.path("paths").path("/calendars/{calendarId}/slots/{slotId}").path("put").path("parameters");
         JsonNode ifMatch = parameterNamed(slotPutParameters, "If-Match");
-        assertEquals("header", ifMatch.path("in").asText());
+        assertEquals("header", ifMatch.path("in").asString());
         assertTrue(ifMatch.path("required").asBoolean());
     }
 
@@ -113,7 +113,7 @@ class OpenApiContractIntegrationTest {
 
         JsonNode content = emailConflict.path("content").path("application/problem+json");
         assertTrue(content.isObject(), "409 response carries application/problem+json content");
-        assertEquals("#/components/schemas/ProblemDetails", content.path("schema").path("$ref").asText());
+        assertEquals("#/components/schemas/ProblemDetails", content.path("schema").path("$ref").asString());
     }
 
     @Test
@@ -148,7 +148,7 @@ class OpenApiContractIntegrationTest {
 
     private JsonNode parameterNamed(JsonNode parameters, String name) {
         for (JsonNode parameter : parameters) {
-            if (name.equals(parameter.path("name").asText())) {
+            if (name.equals(parameter.path("name").asString())) {
                 return parameter;
             }
         }
@@ -163,14 +163,13 @@ class OpenApiContractIntegrationTest {
     }
 
     private Set<String> responseStatuses(JsonNode responses) {
-        Set<String> statuses = new java.util.TreeSet<>(responses.propertyNames());
-        return statuses;
+        return new java.util.TreeSet<>(responses.propertyNames());
     }
 
     private Set<String> enumValues(JsonNode schema, JsonNode schemas) {
-        JsonNode resolved = schema.has("$ref") ? schemas.path(refName(schema.path("$ref").asText())) : schema;
+        JsonNode resolved = schema.has("$ref") ? schemas.path(refName(schema.path("$ref").asString())) : schema;
         Set<String> values = new java.util.TreeSet<>();
-        resolved.path("enum").forEach(value -> values.add(value.asText()));
+        resolved.path("enum").forEach(value -> values.add(value.asString()));
         return values;
     }
 
