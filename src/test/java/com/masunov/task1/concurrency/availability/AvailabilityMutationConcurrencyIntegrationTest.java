@@ -145,9 +145,9 @@ class AvailabilityMutationConcurrencyIntegrationTest {
     }
 
     private void assertValidAvailability(String calendarId, JsonNode availability) {
-        assertEquals(calendarId, availability.required("calendarId").asText());
-        Instant frameStart = Instant.parse(availability.required("start").asText());
-        Instant frameEnd = Instant.parse(availability.required("end").asText());
+        assertEquals(calendarId, availability.required("calendarId").asString());
+        Instant frameStart = Instant.parse(availability.required("start").asString());
+        Instant frameEnd = Instant.parse(availability.required("end").asString());
         assertTrue(frameEnd.isAfter(frameStart));
 
         JsonNode intervals = availability.required("intervals");
@@ -155,9 +155,9 @@ class AvailabilityMutationConcurrencyIntegrationTest {
         Instant previousEnd = null;
         for (int index = 0; index < intervals.size(); index++) {
             JsonNode interval = intervals.get(index);
-            Instant start = Instant.parse(interval.required("start").asText());
-            Instant end = Instant.parse(interval.required("end").asText());
-            String state = interval.required("state").asText();
+            Instant start = Instant.parse(interval.required("start").asString());
+            Instant end = Instant.parse(interval.required("end").asString());
+            String state = interval.required("state").asString();
             assertTrue(end.isAfter(start), "Availability interval must have a positive duration");
             assertTrue(!start.isBefore(frameStart) && !end.isAfter(frameEnd),
                     "Availability interval must be contained by the requested frame");
@@ -177,9 +177,9 @@ class AvailabilityMutationConcurrencyIntegrationTest {
         JsonNode intervals = availability.required("intervals");
         assertEquals(1, intervals.size());
         JsonNode interval = intervals.get(0);
-        assertEquals(expected.start(), interval.required("start").asText());
-        assertEquals(expected.end(), interval.required("end").asText());
-        assertEquals(expectedState, interval.required("state").asText());
+        assertEquals(expected.start(), interval.required("start").asString());
+        assertEquals(expected.end(), interval.required("end").asString());
+        assertEquals(expectedState, interval.required("state").asString());
     }
 
     private void assertEmptyFinalAvailability(String calendarId) throws Exception {
@@ -200,7 +200,7 @@ class AvailabilityMutationConcurrencyIntegrationTest {
                         ))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("calendarId").asText();
+        return response(result).required("calendarId").asString();
     }
 
     private Slot createSlot(String calendarId, Interval interval) throws Exception {
@@ -211,7 +211,7 @@ class AvailabilityMutationConcurrencyIntegrationTest {
                 .andReturn();
         String etag = result.getResponse().getHeader(HttpHeaders.ETAG);
         assertNotNull(etag, "Slot creation response must contain ETag");
-        return new Slot(response(result).required("id").asText(), etag);
+        return new Slot(response(result).required("id").asString(), etag);
     }
 
     private int createSlotStatus(String calendarId, Interval interval) throws Exception {

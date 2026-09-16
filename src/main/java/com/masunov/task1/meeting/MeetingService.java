@@ -77,7 +77,7 @@ class MeetingService {
     }
 
     private String requiredTrimmedValue(String value, String fieldName) {
-        if (value == null || value.strip().isEmpty()) {
+        if (value == null || value.isBlank()) {
             throw new InvalidUserRequestException("%s is required".formatted(fieldName));
         }
         return value.strip();

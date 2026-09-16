@@ -65,7 +65,7 @@ class MeetingConversionApiIntegrationTest {
         );
 
         JsonNode meeting = response(result);
-        assertDoesNotThrow(() -> UUID.fromString(meeting.required("id").asText()));
+        assertDoesNotThrow(() -> UUID.fromString(meeting.required("id").asString()));
         mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, slotId))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(slotId))
@@ -398,7 +398,7 @@ class MeetingConversionApiIntegrationTest {
                         ))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("calendarId").asText();
+        return response(result).required("calendarId").asString();
     }
 
     private String createFreeSlot(String calendarId) throws Exception {
@@ -407,7 +407,7 @@ class MeetingConversionApiIntegrationTest {
                         .content(slotRequest("2026-12-01T09:00:00Z", "2026-12-01T10:00:00Z")))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("id").asText();
+        return response(result).required("id").asString();
     }
 
     private void markBusy(String calendarId, String slotId) throws Exception {

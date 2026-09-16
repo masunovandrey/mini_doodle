@@ -106,10 +106,10 @@ class SlotDeletionConcurrencyIntegrationTest {
                     () -> "Unexpected GET during deletion status: " + readStatus);
             if (readStatus == 200) {
                 JsonNode slot = response(readResult);
-                assertEquals(slotId, slot.required("id").asText());
-                assertEquals("2026-12-25T09:00:00Z", slot.required("start").asText());
-                assertEquals("2026-12-25T10:00:00Z", slot.required("end").asText());
-                assertEquals("FREE", slot.required("state").asText());
+                assertEquals(slotId, slot.required("id").asString());
+                assertEquals("2026-12-25T09:00:00Z", slot.required("start").asString());
+                assertEquals("2026-12-25T10:00:00Z", slot.required("end").asString());
+                assertEquals("FREE", slot.required("state").asString());
                 assertNotNull(readResult.getResponse().getHeader(HttpHeaders.ETAG),
                         "A successful slot read must include ETag");
             }
@@ -144,7 +144,7 @@ class SlotDeletionConcurrencyIntegrationTest {
                         ))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("calendarId").asText();
+        return response(result).required("calendarId").asString();
     }
 
     private String createSlot(String calendarId) throws Exception {
@@ -153,7 +153,7 @@ class SlotDeletionConcurrencyIntegrationTest {
                         .content("{\"start\":\"2026-12-25T09:00:00Z\",\"end\":\"2026-12-25T10:00:00Z\"}"))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("id").asText();
+        return response(result).required("id").asString();
     }
 
     private String etag(String calendarId, String slotId) throws Exception {

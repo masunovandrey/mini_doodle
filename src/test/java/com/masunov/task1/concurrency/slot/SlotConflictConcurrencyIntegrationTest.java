@@ -144,7 +144,7 @@ class SlotConflictConcurrencyIntegrationTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(Map.of("start", slotStart, "end", slotEnd))))
                 .andExpect(status().isCreated()).andReturn();
-        return new Slot(objectMapper.readTree(result.getResponse().getContentAsString()).required("id").asText(),
+        return new Slot(objectMapper.readTree(result.getResponse().getContentAsString()).required("id").asString(),
                 result.getResponse().getHeader(HttpHeaders.ETAG));
     }
 
@@ -177,7 +177,7 @@ class SlotConflictConcurrencyIntegrationTest {
                         .content(objectMapper.writeValueAsString(Map.of("email", "slot-race-" + suffix + "@example.com", "name", "Slot Race " + suffix))))
                 .andExpect(status().isCreated()).andReturn();
         JsonNode response = objectMapper.readTree(result.getResponse().getContentAsString());
-        return response.required("calendarId").asText();
+        return response.required("calendarId").asString();
     }
     private record Slot(String id, String etag) {
     }

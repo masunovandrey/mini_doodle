@@ -77,10 +77,10 @@ class SlotWriteConcurrencyIntegrationTest {
         JsonNode finalSlot = response(mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, slot.id()))
                 .andExpect(status().isOk())
                 .andReturn());
-        Interval actual = new Interval(finalSlot.required("start").asText(), finalSlot.required("end").asText());
+        Interval actual = new Interval(finalSlot.required("start").asString(), finalSlot.required("end").asString());
         assertTrue(actual.equals(FIRST_REPLACEMENT) || actual.equals(SECOND_REPLACEMENT),
                 () -> "Final slot interval must equal one submitted replacement, but was " + actual);
-        assertEquals("FREE", finalSlot.required("state").asText());
+        assertEquals("FREE", finalSlot.required("state").asString());
     }
 
     @Test
@@ -115,7 +115,7 @@ class SlotWriteConcurrencyIntegrationTest {
         mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, slot.id()))
                 .andExpect(status().isOk())
                 .andExpect(result -> assertEquals(expectedFinalState,
-                        response(result).required("state").asText()));
+                        response(result).required("state").asString()));
     }
 
     @Test
@@ -190,7 +190,7 @@ class SlotWriteConcurrencyIntegrationTest {
                         .content(json(Map.of("email", "same-slot-write-" + suffix + "@example.com", "name", "Same Slot Write " + suffix))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("calendarId").asText();
+        return response(result).required("calendarId").asString();
     }
 
     private Slot createFreeSlot(String calendarId) throws Exception {
@@ -203,7 +203,7 @@ class SlotWriteConcurrencyIntegrationTest {
         if (etag == null) {
             throw new AssertionError("Slot creation response must contain ETag");
         }
-        return new Slot(response(result).required("id").asText(), etag);
+        return new Slot(response(result).required("id").asString(), etag);
     }
 
     private String json(Map<String, String> body) throws Exception {

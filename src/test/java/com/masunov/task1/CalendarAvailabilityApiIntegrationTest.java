@@ -140,7 +140,7 @@ class CalendarAvailabilityApiIntegrationTest {
                         ))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("calendarId").asText();
+        return response(result).required("calendarId").asString();
     }
 
     private String createSlot(String calendarId, String start, String end) throws Exception {
@@ -149,7 +149,7 @@ class CalendarAvailabilityApiIntegrationTest {
                         .content(objectMapper.writeValueAsString(Map.of("start", start, "end", end))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("id").asText();
+        return response(result).required("id").asString();
     }
 
     private void markBusy(String calendarId, String slotId) throws Exception {

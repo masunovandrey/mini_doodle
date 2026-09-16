@@ -39,8 +39,8 @@ class UserApiIntegrationTest {
         MvcResult result = createUser("  Ada@Example.com  ", "  Ada Lovelace  ");
 
         JsonNode response = objectMapper.readTree(result.getResponse().getContentAsString());
-        assertDoesNotThrow(() -> UUID.fromString(response.path("id").asText()));
-        assertDoesNotThrow(() -> UUID.fromString(response.path("calendarId").asText()));
+        assertDoesNotThrow(() -> UUID.fromString(response.path("id").asString()));
+        assertDoesNotThrow(() -> UUID.fromString(response.path("calendarId").asString()));
     }
 
     @Test
@@ -48,7 +48,7 @@ class UserApiIntegrationTest {
         MvcResult creation = createUser("grace.hopper@example.com", "Grace Hopper");
         String userId = objectMapper.readTree(creation.getResponse().getContentAsString())
                 .required("id")
-                .asText();
+                .asString();
 
         mockMvc.perform(get("/users/{userId}", userId))
                 .andExpect(status().isOk())

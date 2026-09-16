@@ -40,7 +40,7 @@ class SlotVersionContractIntegrationTest {
                         .content(json(Map.of("start", "2026-12-21T09:00:00Z", "end", "2026-12-21T10:00:00Z"))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        String slotId = response(creation).required("id").asText();
+        String slotId = response(creation).required("id").asString();
         String initialEtag = requiredEtag(creation);
 
         mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, slotId))
@@ -74,7 +74,7 @@ class SlotVersionContractIntegrationTest {
         MvcResult result = mockMvc.perform(post("/users").contentType(MediaType.APPLICATION_JSON)
                         .content(json(Map.of("email", "etag-" + suffix + "@example.com", "name", "ETag " + suffix))))
                 .andExpect(status().isCreated()).andReturn();
-        return response(result).required("calendarId").asText();
+        return response(result).required("calendarId").asString();
     }
 
     private String requiredEtag(MvcResult result) {

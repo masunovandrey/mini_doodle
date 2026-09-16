@@ -103,7 +103,7 @@ class IndependentCalendarConcurrencyIntegrationTest {
                         ))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("calendarId").asText();
+        return response(result).required("calendarId").asString();
     }
 
     private int awaitStatus(Future<Integer> response) {

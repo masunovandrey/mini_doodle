@@ -249,7 +249,7 @@ class MeetingConversionConcurrencyIntegrationTest {
                         ))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("calendarId").asText();
+        return response(result).required("calendarId").asString();
     }
 
     private String createFreeSlot(String calendarId) throws Exception {
@@ -265,7 +265,7 @@ class MeetingConversionConcurrencyIntegrationTest {
                         ))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return response(result).required("id").asText();
+        return response(result).required("id").asString();
     }
 
     private String meetingRequest() throws Exception {

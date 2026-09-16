@@ -116,18 +116,18 @@ class SlotPutPatchConcurrencyIntegrationTest {
                 "The final ETag must match the winning mutation");
 
         if (intervalWon) {
-            assertEquals(PUT_START, slot.required("start").asText(),
+            assertEquals(PUT_START, slot.required("start").asString(),
                     "Winning PUT interval start must be preserved");
-            assertEquals(PUT_END, slot.required("end").asText(),
+            assertEquals(PUT_END, slot.required("end").asString(),
                     "Winning PUT interval end must be preserved");
-            assertEquals("FREE", slot.required("state").asText(),
+            assertEquals("FREE", slot.required("state").asString(),
                     "PUT must not silently change the slot state");
         } else {
-            assertEquals(ORIGINAL_START, slot.required("start").asText(),
+            assertEquals(ORIGINAL_START, slot.required("start").asString(),
                     "Winning PATCH must not silently change the slot interval start");
-            assertEquals(ORIGINAL_END, slot.required("end").asText(),
+            assertEquals(ORIGINAL_END, slot.required("end").asString(),
                     "Winning PATCH must not silently change the slot interval end");
-            assertEquals("BUSY", slot.required("state").asText(),
+            assertEquals("BUSY", slot.required("state").asString(),
                     "Winning PATCH state must be preserved");
         }
     }
@@ -168,7 +168,7 @@ class SlotPutPatchConcurrencyIntegrationTest {
                         ))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return objectMapper.readTree(result.getResponse().getContentAsString()).required("calendarId").asText();
+        return objectMapper.readTree(result.getResponse().getContentAsString()).required("calendarId").asString();
     }
 
     private String createSlot(String calendarId) throws Exception {
@@ -177,7 +177,7 @@ class SlotPutPatchConcurrencyIntegrationTest {
                         .content(objectMapper.writeValueAsString(Map.of("start", ORIGINAL_START, "end", ORIGINAL_END))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return objectMapper.readTree(result.getResponse().getContentAsString()).required("id").asText();
+        return objectMapper.readTree(result.getResponse().getContentAsString()).required("id").asString();
     }
 
     private String etag(String calendarId, String slotId) throws Exception {

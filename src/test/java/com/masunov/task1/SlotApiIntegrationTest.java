@@ -48,11 +48,11 @@ class SlotApiIntegrationTest {
         );
 
         JsonNode response = objectMapper.readTree(result.getResponse().getContentAsString());
-        assertDoesNotThrow(() -> UUID.fromString(response.required("id").asText()));
-        mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, response.required("id").asText()))
+        assertDoesNotThrow(() -> UUID.fromString(response.required("id").asString()));
+        mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, response.required("id").asString()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.id").value(response.required("id").asText()))
+                .andExpect(jsonPath("$.id").value(response.required("id").asString()))
                 .andExpect(jsonPath("$.start").value("2026-03-10T07:00:00Z"))
                 .andExpect(jsonPath("$.end").value("2026-03-10T07:30:00Z"))
                 .andExpect(jsonPath("$.state").value("FREE"));
@@ -89,7 +89,7 @@ class SlotApiIntegrationTest {
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PROBLEM_JSON))
                 .andExpect(jsonPath("$.status").value(409));
 
-        mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, existing.required("id").asText()))
+        mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, existing.required("id").asString()))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.start").value("2026-05-12T09:00:00Z"))
                 .andExpect(jsonPath("$.end").value("2026-05-12T10:00:00Z"))
@@ -106,15 +106,15 @@ class SlotApiIntegrationTest {
                 "2026-06-08T11:00:00Z"
         ));
 
-        mockMvc.perform(put("/calendars/{calendarId}/slots/{slotId}", calendarId, toUpdate.required("id").asText())
-                        .header(HttpHeaders.IF_MATCH, etag(calendarId, toUpdate.required("id").asText()))
+        mockMvc.perform(put("/calendars/{calendarId}/slots/{slotId}", calendarId, toUpdate.required("id").asString())
+                        .header(HttpHeaders.IF_MATCH, etag(calendarId, toUpdate.required("id").asString()))
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(slotRequest("2026-06-08T09:30:00Z", "2026-06-08T10:30:00Z")))
                 .andExpect(status().isConflict())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PROBLEM_JSON))
                 .andExpect(jsonPath("$.status").value(409));
 
-        mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, toUpdate.required("id").asText()))
+        mockMvc.perform(get("/calendars/{calendarId}/slots/{slotId}", calendarId, toUpdate.required("id").asString()))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.start").value("2026-06-08T10:00:00Z"))
                 .andExpect(jsonPath("$.end").value("2026-06-08T11:00:00Z"));
@@ -128,7 +128,7 @@ class SlotApiIntegrationTest {
                 "2026-07-04T09:00:00Z",
                 "2026-07-04T10:00:00Z"
         ));
-        String slotId = created.required("id").asText();
+        String slotId = created.required("id").asString();
 
         changeState(calendarId, slotId, "BUSY");
 
@@ -151,7 +151,7 @@ class SlotApiIntegrationTest {
                 calendarId,
                 "2026-08-15T13:00:00Z",
                 "2026-08-15T14:00:00Z"
-        )).required("id").asText();
+        )).required("id").asString();
 
         changeState(calendarId, slotId, "BUSY")
                 .andExpect(jsonPath("$.state").value("BUSY"));
@@ -166,7 +166,7 @@ class SlotApiIntegrationTest {
                 calendarId,
                 "2026-09-20T09:00:00Z",
                 "2026-09-20T10:00:00Z"
-        )).required("id").asText();
+        )).required("id").asString();
 
         mockMvc.perform(delete("/calendars/{calendarId}/slots/{slotId}", calendarId, slotId)
                         .header(HttpHeaders.IF_MATCH, etag(calendarId, slotId)))
@@ -208,7 +208,7 @@ class SlotApiIntegrationTest {
                 calendarId,
                 "2026-10-02T09:00:00Z",
                 "2026-10-02T10:00:00Z"
-        )).required("id").asText();
+        )).required("id").asString();
 
         mockMvc.perform(patch("/calendars/{calendarId}/slots/{slotId}", calendarId, slotId)
                         .header(HttpHeaders.IF_MATCH, etag(calendarId, slotId))
@@ -226,7 +226,7 @@ class SlotApiIntegrationTest {
                 calendarId,
                 "2026-11-10T09:00:00Z",
                 "2026-11-10T10:00:00Z"
-        )).required("id").asText();
+        )).required("id").asString();
         String otherCalendarId = createCalendar();
 
         mockMvc.perform(post("/calendars/{calendarId}/slots", UUID.randomUUID())
@@ -281,7 +281,7 @@ class SlotApiIntegrationTest {
                         ))))
                 .andExpect(status().isCreated())
                 .andReturn();
-        return slotResponse(result).required("calendarId").asText();
+        return slotResponse(result).required("calendarId").asString();
     }
 
     private JsonNode slotResponse(MvcResult result) throws Exception {
